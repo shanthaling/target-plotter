@@ -304,7 +304,7 @@ if st.session_state.coords:
 
     # FIXED: Navigation controls - Handle button presses before slider
     # Check for button presses and update series_index BEFORE rendering the slider
-    col3, col4, col5, col6 = st.columns(4)
+    col3, col4, col5 = st.columns(3)
 
     # with col1:
     #     if st.button("⬅️ Previous", key="prev_btn", use_container_width=True):
@@ -327,10 +327,10 @@ if st.session_state.coords:
             st.session_state.zoom_level = 25
             st.session_state.show_optimal = False
 
-    with col6:
-        btn_text = "Show Raw" if st.session_state.show_optimal else "Show Optimal"
-        if st.button(btn_text, key="optimal_btn", use_container_width=True):
-            st.session_state.show_optimal = not st.session_state.show_optimal
+    # with col6:
+    #     btn_text = "Show Raw" if st.session_state.show_optimal else "Show Optimal"
+    #     if st.button(btn_text, key="optimal_btn", use_container_width=True):
+    #         st.session_state.show_optimal = not st.session_state.show_optimal
 
     # with col7:
     #     show_ring_labels = st.checkbox("Ring Labels", value=False)
