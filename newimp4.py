@@ -304,15 +304,15 @@ if st.session_state.coords:
 
     # FIXED: Navigation controls - Handle button presses before slider
     # Check for button presses and update series_index BEFORE rendering the slider
-    col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
+    col3, col4, col5, col6, col7 = st.columns(5)
 
-    with col1:
-        if st.button("⬅️ Previous", key="prev_btn", use_container_width=True):
-            st.session_state.series_index = (st.session_state.series_index - 1) % total_views
+    # with col1:
+    #     if st.button("⬅️ Previous", key="prev_btn", use_container_width=True):
+    #         st.session_state.series_index = (st.session_state.series_index - 1) % total_views
 
-    with col2:
-        if st.button("Next ➡️", key="next_btn", use_container_width=True):
-            st.session_state.series_index = (st.session_state.series_index + 1) % total_views
+    # with col2:
+    #     if st.button("Next ➡️", key="next_btn", use_container_width=True):
+    #         st.session_state.series_index = (st.session_state.series_index + 1) % total_views
 
     with col3:
         if st.button("🔍 Zoom In", key="zoom_in_btn", use_container_width=True):
