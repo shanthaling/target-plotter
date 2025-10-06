@@ -304,7 +304,7 @@ if st.session_state.coords:
 
     # FIXED: Navigation controls - Handle button presses before slider
     # Check for button presses and update series_index BEFORE rendering the slider
-    col3, col4, col5, col6, col7 = st.columns(5)
+    col3, col4, col5, col6 = st.columns(4)
 
     # with col1:
     #     if st.button("⬅️ Previous", key="prev_btn", use_container_width=True):
@@ -332,8 +332,8 @@ if st.session_state.coords:
         if st.button(btn_text, key="optimal_btn", use_container_width=True):
             st.session_state.show_optimal = not st.session_state.show_optimal
 
-    with col7:
-        show_ring_labels = st.checkbox("Ring Labels", value=False)
+    # with col7:
+    #     show_ring_labels = st.checkbox("Ring Labels", value=False)
 
     # Series selector slider - This will now properly reflect the button changes
     slider_options = [f"Series {i + 1}" for i in range(num_series)] + ["All Shots Combined"]
@@ -357,7 +357,7 @@ if st.session_state.coords:
         st.session_state.series_index,
         st.session_state.show_optimal,
         st.session_state.zoom_level,
-        show_ring_labels
+        # show_ring_labels
     )
 
     st.pyplot(fig, use_container_width=True)
@@ -407,7 +407,7 @@ if st.session_state.coords:
             st.session_state.series_index,
             st.session_state.show_optimal,
             st.session_state.zoom_level,
-            show_ring_labels
+            # show_ring_labels
         )
         fig_dl.savefig(buf, format='png', facecolor='black', dpi=150, bbox_inches='tight')
         buf.seek(0)
@@ -450,7 +450,7 @@ if st.session_state.coords:
                             idx,
                             st.session_state.show_optimal,
                             st.session_state.zoom_level,
-                            show_ring_labels
+                            # show_ring_labels
                         )
 
                         img_buffer = io.BytesIO()
