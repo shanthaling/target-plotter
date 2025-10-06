@@ -142,7 +142,7 @@ def plot_target(coords, idx, show_optimal, zoom):
     for r in RING_RADII:
         ax.add_patch(Circle((0, 0), r, fill=False, color='white', linewidth=0.5))
     shots = len(sel)
-    txt = f"Non decimal: {int_tot}  Decimal: {dec_tot:.1f}  Inner tens: {inner_count}"
+    txt = f"Non decimal: {int_tot}  Decimal: {dec_tot:.1f}  Inner tens: {inner_count}*"
     ax.text(0.5, 0.05, txt, transform=ax.transAxes,
             ha='center', color='yellow', weight='bold')
     title = "All Shots Combined" if is_all else f"Series {idx+1} ({start+1}-{start+shots})"
